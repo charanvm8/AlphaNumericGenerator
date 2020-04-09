@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @RestController(value = "/")
 public class ChallengeController {
@@ -41,7 +38,8 @@ public class ChallengeController {
         }
         ResponseModel response = new ResponseModel(filterValues(alphaNumericValues,input.pageSize,resultsSize),
                                                     resultsSize,
-                                                    input.pageSize);
+                                                    input.pageSize,
+                                                    pages,resultsSize);
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
 
@@ -52,6 +50,7 @@ public class ChallengeController {
             endIndex = resultsSize;
         }
         List<String> resultList = new ArrayList<>(alphaNumericValues);
+        Collections.sort(resultList);
         return resultList.subList(startIndex,endIndex);
     }
 
