@@ -39,7 +39,7 @@ public class ChallengeController {
             LOGGER.error("Requested page results exceeds the available results");
             return new ResponseEntity<>("Requested page results exceeds the available results",HttpStatus.BAD_REQUEST);
         }
-        ResponseModel response = new ResponseModel(filterValues(alphaNumericValues,input.pageSize,resultsSize),
+        ResponseModel response = new ResponseModel(filterValues(alphaNumericValues,input.pageSize-1,resultsSize),
                                                     resultsSize,
                                                     input.pageSize,
                                                     pages,resultsSize);
