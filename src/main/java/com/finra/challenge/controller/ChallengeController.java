@@ -15,7 +15,7 @@ public class ChallengeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ChallengeController.class);
 
-    @RequestMapping(path = "getAlphaNumericValues",consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "getAlphaNumericValues",consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> getAlphaNumericValues(@RequestBody InputModel input) throws Exception{
         System.out.print("Inside method");
         String inputNumber = input.number;
