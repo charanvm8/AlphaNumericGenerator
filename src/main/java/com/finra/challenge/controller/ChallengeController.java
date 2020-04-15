@@ -5,9 +5,7 @@ import com.finra.challenge.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -17,7 +15,7 @@ public class ChallengeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ChallengeController.class);
 
-    @RequestMapping(path = "getAlphaNumericValues",method = RequestMethod.POST,consumes = "application/json", produces = "application/json")
+    @RequestMapping(path = "getAlphaNumericValues",consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> getAlphaNumericValues(@RequestBody InputModel input) throws Exception{
         System.out.print("Inside method");
         String inputNumber = input.number;
