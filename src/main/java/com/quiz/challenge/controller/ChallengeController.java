@@ -1,7 +1,7 @@
-package com.finra.challenge.controller;
+package com.quiz.challenge.controller;
 
-import com.finra.challenge.model.InputModel;
-import com.finra.challenge.model.ResponseModel;
+import com.quiz.challenge.model.InputModel;
+import com.quiz.challenge.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

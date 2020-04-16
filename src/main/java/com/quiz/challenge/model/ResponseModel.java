@@ -1,4 +1,4 @@
-package com.finra.challenge.model;
+package com.quiz.challenge.model;
 
 import java.util.List;
 
